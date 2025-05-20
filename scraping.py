@@ -30,8 +30,8 @@ custom_stopwords = [
 nltk.download('punkt_tab')
 
 # Fungsi MongoDB
-def save_to_mongodb(data, db_name="db_bulutangkis", collection_name="artikel"):
-    client = MongoClient("mongodb://localhost:27017/")
+def save_to_mongodb(data, db_name="bigdata", collection_name="artikelbultang"):
+    client = MongoClient("mongodb+srv://colabuser:colabpass123@cluster0.dvy04ux.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     db = client[db_name]
     collection = db[collection_name]
     if collection.count_documents({"url": data["url"]}) == 0:
@@ -105,8 +105,8 @@ def run_schedule():
         time.sleep(1)
 
 # Fungsi load dan analisis artikel dari MongoDB
-def load_articles_from_mongodb(db_name="db_bulutangkis", collection_name="artikel"):
-    client = MongoClient("mongodb://localhost:27017/")
+def load_articles_from_mongodb(db_name="bigdata", collection_name="artikelbultang"):
+    client = MongoClient("mongodb+srv://colabuser:colabpass123@cluster0.dvy04ux.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     db = client[db_name]
     collection = db[collection_name]
     return list(collection.find())
