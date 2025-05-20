@@ -1,0 +1,12 @@
+streamlit
+schedule
+requests
+selenium
+webdriver-manager
+beautifulsoup4
+pymongo
+Sastrawi
+nltk
+pandas
+matplotlib
+wordcloud
